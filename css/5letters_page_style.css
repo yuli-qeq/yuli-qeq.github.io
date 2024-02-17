@@ -24,3 +24,17 @@
     border-radius: 5px;
     margin-right: 5px;
 }
+
+.input_text_true{
+    /* background-color: rgb(255, 255, 255); */
+    color: inherit;
+}
+
+.input_text_false{
+    /* background-color: rgb(209, 209, 209); */
+    color: inherit;
+}
+
+input[type="text"]{
+    font-size: medium;
+}

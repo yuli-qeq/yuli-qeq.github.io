@@ -5,26 +5,23 @@ words[5] = ['абака', 'аббат', 'абвер', 'абзац', 'аборт'
 
 //#endregion
 
-
 let inputWords = document.getElementById("inputWords");
 let outputWords = document.getElementById("outputWords");
 let inputText1 = document.getElementById("input_text1");
+let addBtn = document.getElementById("btn1");
 let lastWordID = 0;
 let letterCnt = 5;
+let inputRegex = /^$/;
 
-$(function(){
-    $.mask.definitions['r'] = "[а-яё]";
-    $("#input_text1").mask("rrrrr");
-});
-
+setRegex();
 showVariants(words[letterCnt]);
 
 document.getElementById('form1').addEventListener('submit', function(event) {
     event.preventDefault();
-    if (inputText1.value.length == letterCnt){
+    if (inputRegex.test(inputText1.value.trim())){
         let s = '<p>';
         for (let i=0; i<letterCnt; i++){
-            s += `<button type="button" class="inputWords_btn_n" id="inputWords_btn_${lastWordID}_${i}">${inputText1.value[i]}</button>`;
+            s += `<button type="button" class="inputWords_btn_n" id="inputWords_btn_${lastWordID}_${i}">${inputText1.value.trim()[i].toLowerCase()}</button>`;
         }
         s += `<button type="button" class="inputWords_btn_del">удалить</button>`;
         s += '</p>';
@@ -35,9 +32,16 @@ document.getElementById('form1').addEventListener('submit', function(event) {
         }
         letterBtnEventSet();
         inputText1.value = "";
+        inputText1.className = "input_text_false";
+        addBtn.disabled = true;
         lastWordID++;
         useAllMasks();
     }
+});
+
+inputText1.addEventListener('input', function(e){
+    if (inputRegex.test(this.value.trim())) {this.className = "input_text_true"; addBtn.disabled = false;}
+    else {this.className = "input_text_false"; addBtn.disabled = true;}
 });
 
 function delParent(){
@@ -184,3 +188,11 @@ function useAllMasks(){
     showVariants(actualWords);
 }
 
+function setRegex(){
+    inputRegex = "^";
+    for (let i=0;i<letterCnt;i++){
+        inputRegex += "[а-яёА-ЯЁ]";
+    }
+    inputRegex += "$";
+    inputRegex = RegExp(inputRegex);
+}

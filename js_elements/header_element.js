@@ -1,4 +1,6 @@
 let headers = document.getElementsByClassName("header");
+let filename = document.URL.split("/");
+filename = filename[filename.length-1];
 for (let i=0;i<headers.length;i++){
     headers[i].innerHTML = `
         <div class="header-container">
@@ -16,6 +18,15 @@ for (let i=0;i<headers.length;i++){
                 <div class="header-content" style="font-size: small; text-align: right;" id="fifty1">
                     <i>"Я могу контролировать свои действия, слова, образ, но не ход мысли, к сожалению."</i><br>Пятьдесят оттенков серого (Э. Л. Джеймс)
                 </div>
+                ${(filename=='index.html')?
+                    `
+                <div class="header-content">
+                    <a href="info_page.html">
+                        <img alt="info" src="img/circle_customer_help_info_information_service_support_icon_123208.svg" style="display: none;" height="30px" id="info2"/>
+                    </a>
+                </div>
+                 `:``
+                }
             </div>
         </div>
     `;

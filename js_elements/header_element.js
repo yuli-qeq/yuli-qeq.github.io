@@ -18,7 +18,7 @@ for (let i=0;i<headers.length;i++){
                 <div class="header-content" style="font-size: small; text-align: right;" id="fifty1">
                     <i>"Я могу контролировать свои действия, слова, образ, но не ход мысли, к сожалению."</i><br>Пятьдесят оттенков серого (Э. Л. Джеймс)
                 </div>
-                ${(filename=='index.html')?
+                ${(filename=='index.html' || filename=='')?
                     `
                 <div class="header-content">
                     <a href="info_page.html">

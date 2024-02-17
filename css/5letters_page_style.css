@@ -1,0 +1,26 @@
+.inputWords_btn_n{
+    background-color: #e0e0e0;
+    height: 30px;
+    width: 30px;
+    border-width: 0;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.inputWords_btn_b{
+    background-color: rgb(150, 235, 113);
+    height: 30px;
+    width: 30px;
+    border-width: 0;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.inputWords_btn_c{
+    background-color: rgb(255, 237, 73);
+    height: 30px;
+    width: 30px;
+    border-width: 0;
+    border-radius: 5px;
+    margin-right: 5px;
+}

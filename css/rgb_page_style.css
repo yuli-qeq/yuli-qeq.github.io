@@ -1,0 +1,19 @@
+#button1{
+    width: 160px;
+    height: 80px;
+}
+
+.input_text_true{
+    background-color: rgb(170, 255, 162);
+}
+
+.input_text_false{
+    background-color: rgb(255, 162, 162);
+}
+
+input{
+    font-size: medium;
+    border-width: 0;
+    height: 30px;
+    border-radius: 5px;
+}

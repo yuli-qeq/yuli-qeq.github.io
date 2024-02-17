@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 букв</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/5letters_page_style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <h2 style="text-align: center;">5 букв</h2><hr>
+        <form id = "form1">
+            <label for="input_text1">Введите слово</label>
+            <input type="text" id="input_text1" autocomplete="off">
+            <button type="submit" id="btn1">Добавить</button>
+            <div id="inputWords"></div>
+        </form>
+        <div id="outputWords" style="margin-top: 40px;"></div>
+    </div>
+
+    <script src="js_elements/header_element.js"></script>
+    <script src="js\5letters_page_script.js"></script>   
+</body>
+</html>

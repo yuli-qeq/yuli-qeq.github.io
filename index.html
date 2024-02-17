@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Юльчик</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    <h1 style="text-align: center;">Oops! Nothing here</h1>
-    <div style="margin: auto; width: fit-content;">
-        <img alt="cat" style="height: 90vh;" src="https://img.freepik.com/free-photo/gold-bengal-cat-white-space_155003-12732.jpg?w=1380&t=st=1707676843~exp=1707677443~hmac=df79901c2c1670c4cd7830d022d44a5e9520f352b89b7ac862e973bd60e3ea67">
+    <div class="header"></div>
+    <div class="container">
+        <h2 style="text-align: center;">Немного о себе</h2><hr>
+        <p>
+        Привет! Я - Юлия, а это мой уголок в интернете, где я открываю двери в мир своих программных экспериментов. Любитель математики и забавных алгоритмов, я стремлюсь создавать интересные программы, в которых каждая строка кода несет в себе зерно нового знания и немного непредсказуемости.
+        </p><p>
+        Если вы здесь, чтобы найти идеальный код, извините, вы пришли не по адресу - здесь скорее царит хаос и беспорядок.
+        </p><p style = "text-align: right;">
+        Автор текста: <i>ChatGPT</i><br>
+        Соавтор: <i>Юльчик</i>
+        </p>
+        <hr><h2 style="text-align: center;">Мои проекты</h2><hr>
+        <p>
+            <div class="projects">
+                <a href="rgb_page.html" style="text-decoration: none;">
+                    <div class="item" style="background-image: url(img/pixelated-background-with-little-squares.jpg);">
+                        RGBA
+                    </div>
+                </a>
+                <a href="5letters_page.html" style="text-decoration: none;">
+                    <div class="item" style="background-image: url(img/letter-game.jpg);">
+                        5 букв
+                    </div>
+                </a>
+            </div>
+        </p>
     </div>
+
+    <img alt="avatar" src="img/Монтажная область 1.png" style="position: fixed; bottom: 0; " height="360px" id="char1"/>
+    <a href="info_page.html">
+    <img alt="info" src="img/circle_customer_help_info_information_service_support_icon_123208.svg" style="position: fixed; bottom: 10px; right: 10px; " height="35px" id="char1"/>
+    </a>
+    <script src="js_elements/header_element.js"></script>
 </body>
 </html>

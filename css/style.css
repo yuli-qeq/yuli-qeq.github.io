@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    background: #08070c url("../img/empty-blackboard.jpg") center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.container{
+    width: 1100px;
+    max-width: 90%;
+    margin: 0 auto;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10px 15px;
+    /* color: #e7ebde; */
+
+    background-color: rgba(255, 255, 255, 1); 
+    color: black; 
+    text-align: justify; 
+    line-height: 150%; 
+    margin-top: 10px;
+}
+
+.header-container{
+    width: 1100px;
+    max-width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    line-height: 56px;
+    font-size: 0;
+    padding: 0 10px;
+    color: #e7ebde;
+}
+
+.header{
+    width: 100%;
+    height: 56px;
+    background-color: #08070c;
+}
+
+.header-content{
+    line-height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: medium;
+}
+
+.body-content{
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 1000px) { 
+    #fifty1 {
+        display: none;
+    }
+    #char1 {
+        height: 200px
+    }
+    .projects a {
+        width: 50%!important;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    .projects a {
+        width: 100%!important;
+    }
+}
+
+.projects{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -5px;
+}
+
+.projects .item{
+    width: 100%;
+    height: 100%;
+    background-color: #999999;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    text-align: center;
+    line-height: 150px;
+    color: white;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects a{
+    display: flex;
+    width: 33.33%;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}

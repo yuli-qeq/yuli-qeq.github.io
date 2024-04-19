@@ -38,3 +38,61 @@
 input[type="text"]{
     font-size: medium;
 }
+
+.switch {
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 35px;
+    margin-top: 2px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .2s;
+    font-size: 14px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width:22px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: grey;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(35px);
+  }
+  
+  .slider.round {
+    border-radius: 20px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+    padding-left: 3px;
+    content: "Ru";
+  }
+
+  input:checked + .slider.round:before {
+    border-radius: 50%;
+    content: "En";
+  }
+
+  

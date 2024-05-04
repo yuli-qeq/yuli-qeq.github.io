@@ -2,7 +2,7 @@ const canvas = document.getElementById('set');
 const context = canvas.getContext('2d');
 canvas.height = canvas.offsetHeight;
 canvas.width = canvas.offsetWidth;
-let scale = 1.2;
+let scale = 2;
 let sx = canvas.width/2;
 let sy = canvas.height/2;
 let smin = Math.min(sx, sy);
@@ -58,6 +58,9 @@ function complex_abs(a){
 document.getElementById('form1').addEventListener('submit', function(event) {
     event.preventDefault();
     curr_iter = 0;
+    scale = Number(document.getElementById("input_scale").value);
+    c[real] = Number(document.getElementById("input_cr").value);
+    c[imag] = Number(document.getElementById("input_ci").value);
     set_array = [];
     set_iter_array = [];
     for (let i=0; i<canvas.width; i++){

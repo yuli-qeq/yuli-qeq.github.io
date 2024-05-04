@@ -11,9 +11,60 @@ let oldTime = null;
 let newTime = null;
 let rAF = null;
 let update_bool = false;
-var playfield = [];
-var buffer = [];
+let playfield = [];
+let buffer = [];
 canvas.onclick = function(){update_bool=!update_bool; }
+let bs_input = document.getElementById("bs_input");
+let input_perc = document.getElementById("input_perc");
+let b_btns = [];
+let b_values = [];
+let s_btns = [];
+let s_values = [];
+
+function bs_input_create(){
+    let cnt_n = 8 + 1;
+    let s = "";
+    let sb = "btn_ruleB";
+    let ss = "btn_ruleS";
+    s += "B ";
+    for (let i=0; i<cnt_n; i++){
+        s += '<button type="button" id="'+ sb + i + '">' + i + '</button>';
+    }
+    s += "<br/>S ";
+    for (let i=0; i<cnt_n; i++){
+        s += '<button type="button" id="'+ ss + i + '">' + i + '</button>';
+    }
+    bs_input.innerHTML = s;
+    b_btns = [];
+    b_values = [];
+    s_btns = [];
+    s_values = [];
+    for (let i=0; i<cnt_n; i++){
+        b_btns.push(document.getElementById(sb + i));
+        b_btns[i].className = "rule_disable";
+        b_values.push(false);
+        b_btns[i].addEventListener("click", function(event){
+            let index = b_btns.indexOf(this);
+            b_values[index] = !b_values[index];
+            if (b_values[index]) this.className = "rule_enable";
+            else this.className = "rule_disable";
+        });
+    }
+    for (let i=0; i<cnt_n; i++){
+        s_btns.push(document.getElementById(ss + i));
+        s_btns[i].className = "rule_disable";
+        s_values.push(false);
+        s_btns[i].addEventListener("click", function(event){
+            let index = s_btns.indexOf(this);
+            s_values[index] = !s_values[index];
+            if (s_values[index]) this.className = "rule_enable";
+            else this.className = "rule_disable";
+        });
+    }
+    b_btns[3].click();
+    s_btns[2].click();
+    s_btns[3].click();
+}
 
 const colors = {
     0: 'black',
@@ -53,7 +104,7 @@ function randField(ver) {
 
 function restartGame() {
     clearField();
-    randField(0.1);
+    randField(Number(input_perc.value));
     drawField();
     rAF = requestAnimationFrame(loop);
     update_bool = false;
@@ -88,10 +139,10 @@ function Life3b23s() {
             }
         }
         buffer[row][col] = playfield[row][col];
-        if (playfield[row][col] == 0 && cnt == 3) {
+        if (playfield[row][col] == 0 && b_values[cnt]) {
             buffer[row][col] = 1;
         }
-        else if (playfield[row][col] === 1 && (cnt != 3 && cnt != 2)) {
+        else if (playfield[row][col] === 1 && !s_values[cnt]) {
             buffer[row][col] = 0;
         }
         }
@@ -100,9 +151,10 @@ function Life3b23s() {
 
 function update() {
     Life3b23s();
-    tmp = playfield;
+    let tmp = playfield;
     playfield = buffer;
     buffer = tmp;
+    tmp = null;
 }
 
 function loop() {
@@ -111,45 +163,9 @@ function loop() {
         update();
         drawField();
         oldTime = newTime;
-        console.log("dsf");
+        console.log("step");
     }
     rAF = requestAnimationFrame(loop);
 }
 
-restartGame();
-
-// ненужный сейчас код
-
-function createconf1() {
-    clearField();
-    for (let row = 1; row < rows - 1; row++) {
-      for (let col = 1; col < cols - 1; col++) {
-        if (row % 3 != 0 && col % 3 != 0) {
-          playfield[row][col] = 1;
-        }
-      }
-    }
-    playfield[rows / 2 - rows / 2 % 3][cols / 2 - cols / 2 % 3 + 1] = 1;
-  }
-  
-  function createconf2() {
-    clearField();
-    let offset = 1;
-    for (let col = offset; col < cols - offset; col++) {
-      playfield[Math.floor(rows / 2)][col] = 1;
-    }
-  }
-  
-  function rule90(conf = false) { //нужно высчитывать только одну строку!!! буфер вообще не нужен
-      if (conf) {
-        playfield[0][cols / 2] = 1;
-      }
-      for (let col = 1; col < cols - 1; col++) {
-        buffer[0][col] = playfield[0][col];
-      }
-      for (let row = 1; row < rows - 1; row++) {
-        for (let col = 1; col < cols - 1; col++) {
-          buffer[row][col] = (playfield[row - 1][col - 1] + playfield[row - 1][col + 1]) % 2;
-        }
-      }
-  }
+bs_input_create();

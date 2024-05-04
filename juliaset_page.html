@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of Life</title>
+    <title>Julia set</title>
     <link rel="icon" href="img/globe_puzzle_seo_internet_network_icon_261451.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/gol_page_style.css"/>
+    <link rel="stylesheet" href="css/juliaset_page_style.css"/>
 </head>
 <body>
     <div class="header"></div>
     <div class="container">
-        <h2 style="text-align: center;">Game of Life</h2><hr>
-        <canvas style="width: 100%; height: 600px;" height="600px" id="game"></canvas>
+        <h2 style="text-align: center;">Julia set</h2><hr>
+        <canvas style="width: 100%; height: 600px;" height="600px" id="set"></canvas>
         <form id = "form1">
-            <label for="input_perc">%: </label>
-            <input type="text" id="input_perc" value="0.1">
+            <label for="input_iter">iter: </label>
+            <input type="text" id="input_iter">
             <button type="submit" id="btn1">Генерация</button>
-            <div id = "bs_input"></div>
         </form>
     </div>
     <script src="js_elements/header_element.js"></script>
-    <script src="js/gol_page_script.js"></script>   
+    <script src="js/juliaset_page_script.js"></script>   
 </body>
 </html>

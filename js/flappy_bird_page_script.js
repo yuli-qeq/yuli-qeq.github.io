@@ -224,7 +224,7 @@ document.addEventListener('keydown', function(event) {
 
 main.addEventListener('pointerdown', function(event) {
     if(game_over)start();
-    if(pause)pause = false;
+    else if(pause)pause = false;
     jump();
 });
 

@@ -1,0 +1,25 @@
+
+#svg_main{
+    height: 70vh;
+    width: 100%;
+    background-color: #5096f1;
+}
+
+.bird{
+    fill: rgb(236, 221, 10);
+    stroke-width: 5px;
+    stroke: rgb(236, 182, 3);
+    transform-origin: center;
+}
+
+.bird_death{
+    fill: rgb(240, 50, 10);
+    stroke-width: 5px;
+    stroke: rgb(212, 32, 8);
+}
+
+.tube{
+    fill: rgb(140, 228, 10);
+    stroke-width: 5px;
+    stroke: rgb(5, 219, 5);
+}
